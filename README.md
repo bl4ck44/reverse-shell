@@ -17,3 +17,21 @@ bash setup.sh
 
 python3 config.py
 ```
+
+### Configuración
+
+Para configuirar la reverse shell para windows debes configurar la IP del atacante:
+
+<p align="center">
+<img src="./Img/config2.png">
+</p>
+
+Luego de esto puedes ejecutar el script.
+
+<p align="center">
+<img src="./Img/setup.png">
+</p>
+
+<p align="center">
+<img src="./Img/config.png">
+</p>
