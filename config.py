@@ -6,10 +6,10 @@ os.system("clear && figlet Reverse Shell | lolcat")
 
 def menu_principal():
     while True:
-        print("\n[1] Configurar Reverse Shell para Windows")
-        print("[2] Configurar Reverse Shell para Linux")
-        print("[3] Iniciar Reverse Shell")
-        print("[4] Salir")
+        print("\n   [1] Configurar Reverse Shell para Windows")
+        print("   [2] Configurar Reverse Shell para Linux")
+        print("   [3] Iniciar Reverse Shell")
+        print("   [4] Salir")
         opcion = input("\033[1m\n[+] Ingrese una opción: \033[0m")
         if opcion == "":
             print("\n[+] Por favor ingrese una opción")
