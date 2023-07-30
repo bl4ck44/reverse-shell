@@ -18,7 +18,7 @@ def menu_principal():
         elif opcion == "2":
             menu2()
         elif opcion == "3":
-            menu2()
+            menu3()
         elif opcion == "4":
             # Salir del programa
             break
