@@ -43,13 +43,7 @@ trap 'int_handler' INT
            sudo apt-get update && sudo apt install -y python3-pip xclip lolcat figlet && python3 -m pip install --upgrade colorama
            sudo apt-get install Netcat
            sudo apt install python-is-python3
-           sudo apt install python3-pip
-           git clone https://github.com/brentvollebregt/auto-py-to-exe.git
-           cd auto-py-to-exe
-           sudo python setup.py install
-           pip install auto-py-to-exe
-           cd ..
-           sudo rm -r auto-py-to-exe;;
+           sudo apt install python3-pip;;
 
            2) echo
            clear
