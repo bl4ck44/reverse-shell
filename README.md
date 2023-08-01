@@ -26,7 +26,7 @@ Para configuirar la reverse shell para windows debes configurar la IP del atacan
 <img src="./Img/config2.png">
 </p>
 
-Para covertir el **shell.py** en ejecutable **.exe** puedes usar auto-py-to-exe.
+Para covertir el **shell.py** en ejecutable **.exe** puedes usar auto-py-to-exe en windows 10.
 
 <p align="center">
 <img src="./Img/setup.png">
