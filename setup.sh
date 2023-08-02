@@ -43,8 +43,7 @@ trap 'int_handler' INT
            sudo apt-get update && sudo apt install -y python3-pip xclip lolcat figlet && python3 -m pip install --upgrade colorama
            sudo apt-get install Netcat
            sudo apt install python-is-python3
-           sudo apt install python3-pip
-           pip3 install pyinstaller;;
+           sudo apt install python3-pip;;
 
            2) echo
            clear

@@ -28,7 +28,6 @@ def menu_principal():
 
 def menu1():
         subprocess.run(["nano", "Scripts/shell.py"])
-        os.system("pyinstaller --noconfirm --onefile --windowed Scripts/shell.py")
 
 def menu2():
         subprocess.run(["nano", "Scripts/shell.sh"])  
