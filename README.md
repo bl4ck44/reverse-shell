@@ -6,17 +6,16 @@
 
 Una reverse shell (o "shell inversa") es una técnica utilizada en ciberseguridad y piratería informática que implica establecer una conexión entre un atacante y una máquina objetivo, permitiendo al atacante ejecutar comandos en la máquina remota de forma remota. Esta técnica es comúnmente utilizada por los hackers para obtener acceso no autorizado a sistemas informáticos y tomar el control de ellos.
 
-```
-git clone https://github.com/bl4ck44/reverse-shell.git
+## Windows 10
 
-cd reverse-shell
+### Requisistos:
 
-sudo chmod +x setup.sh
+* Python3
 
-bash setup.sh
+* Visual Studio Code
 
-python3 config.py
-```
+Descargar el resporitorio luego ejecutar el archivo **config.bat** para configurar la reverse shell, en windows 10.
+
 
 ### Configuración
 
@@ -24,14 +23,4 @@ Para configuirar la reverse shell para windows debes configurar la IP del atacan
 
 <p align="center">
 <img src="./Img/config2.png">
-</p>
-
-Para covertir el **shell.py** en ejecutable **.exe** puedes usar auto-py-to-exe en windows 10.
-
-<p align="center">
-<img src="./Img/setup.png">
-</p>
-
-<p align="center">
-<img src="./Img/config.png">
 </p>
