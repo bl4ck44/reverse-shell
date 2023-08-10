@@ -24,3 +24,9 @@ Para configuirar la reverse shell para windows debes configurar la IP del atacan
 <p align="center">
 <img src="./Img/config2.png">
 </p>
+
+Luego en nuestra maquina atacante **Linux** usaremos netcat para escuchar la conexión de la reverse shell mediante el puerto 4444.
+
+```nc
+nc -lvnp 4444
+```
